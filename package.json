@@ -2,7 +2,8 @@
   "name": "workers-types-repro",
   "version": "0.0.0",
   "scripts": {
-    "build": "tshy"
+    "build": "tshy",
+    "test": "vitest run"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.1.19",

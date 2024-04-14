@@ -1,0 +1,9 @@
+{
+	"compatibility_date": "2024-04-05",
+	"main": "src/index.ts",
+	"compatibility_flags": ["nodejs_compat"],
+	"durable_objects": {
+		"bindings": [{"class_name": "Manager", "name": "MANAGER"}]
+	},
+	"migrations": [{"tag": "v1", "new_classes": ["Manager"]}]
+}
