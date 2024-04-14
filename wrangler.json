@@ -5,5 +5,12 @@
 	"durable_objects": {
 		"bindings": [{"class_name": "Manager", "name": "MANAGER"}]
 	},
+  "services": [
+    {
+      "binding": "MANAGER_SERVICE",
+      "service": "manager",
+      "entrypoint": "ManagerService"
+    }
+  ],
 	"migrations": [{"tag": "v1", "new_classes": ["Manager"]}]
 }

@@ -4,6 +4,5 @@ import {describe, it, expect} from 'vitest'
 import {Manager} from '../src'
 
 it('should be ok', async () => {
-	const stub = env.MANAGER.get(env.MANAGER.idFromName('main'))
-	return await stub.test("")
+	const res = await env.MANAGER_SERVICE
 })

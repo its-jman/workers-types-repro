@@ -4,22 +4,22 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-importers:
-
-  .:
-    devDependencies:
-      '@cloudflare/vitest-pool-workers':
-        specifier: ^0.1.19
-        version: 0.1.19(@cloudflare/workers-types@4.20240405.0)(@vitest/runner@1.3.0)(@vitest/snapshot@1.3.0)(vitest@1.3.0)
-      '@cloudflare/workers-types':
-        specifier: ^4.20240405.0
-        version: 4.20240405.0
-      tshy:
-        specifier: ^1.14.0
-        version: 1.14.0
-      vitest:
-        specifier: ^1.3.0
-        version: 1.3.0
+devDependencies:
+  '@cloudflare/vitest-pool-workers':
+    specifier: ^0.1.19
+    version: 0.1.19(@cloudflare/workers-types@4.20240405.0)(@vitest/runner@1.3.0)(@vitest/snapshot@1.3.0)(vitest@1.3.0)
+  '@cloudflare/workers-types':
+    specifier: ^4.20240405.0
+    version: 4.20240405.0
+  tshy:
+    specifier: ^1.14.0
+    version: 1.14.0
+  vitest:
+    specifier: ^1.3.0
+    version: 1.3.0
+  wrangler:
+    specifier: https://prerelease-registry.devprod.cloudflare.dev/workers-sdk/runs/8555574864/npm-package-wrangler-5508
+    version: '@prerelease-registry.devprod.cloudflare.dev/workers-sdk/runs/8555574864/npm-package-wrangler-5508(@cloudflare/workers-types@4.20240405.0)'
 
 packages:
 
@@ -53,10 +53,28 @@ packages:
       - utf-8-validate
     dev: true
 
+  /@cloudflare/workerd-darwin-64@1.20240403.0:
+    resolution: {integrity: sha512-gBsoGFHCkC3tfAmr/jr6UEKEyIIeNEvfbRSIJrrkkuJ8wqqkWGZB6pmKx5lfQDvQO8R+8PgcI4pduP0NY35s/Q==}
+    engines: {node: '>=16'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
   /@cloudflare/workerd-darwin-64@1.20240405.0:
     resolution: {integrity: sha512-ut8kwpHmlz9dNSjoov6v1b6jS50J46Mj9QcMA0t1Hne36InaQk/qqPSd12fN5p2GesZ9OOBJvBdDsTblVdyJ1w==}
     engines: {node: '>=16'}
     cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@cloudflare/workerd-darwin-arm64@1.20240403.0:
+    resolution: {integrity: sha512-UykAt0YiFR4Y3o84QAEb6NQehwZ8CaEnZHw8doe1M03JiWxVcCdkDb3pbAs4p7Mj56/Gj0G0+SJ+JmQTn2aIQA==}
+    engines: {node: '>=16'}
+    cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
@@ -71,10 +89,28 @@ packages:
     dev: true
     optional: true
 
+  /@cloudflare/workerd-linux-64@1.20240403.0:
+    resolution: {integrity: sha512-MS+Mg7MtXEH6ZFJcrGreSqDe+vU9hRZt8AZdhIVkQKDOCS6AjmBTEz6r6tj1iGLMLei4pEZegyXwf06clSR9Og==}
+    engines: {node: '>=16'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
   /@cloudflare/workerd-linux-64@1.20240405.0:
     resolution: {integrity: sha512-3tYpfjtxEQ0R30Pna7OF3Bz0CTx30hc0QNtH61KnkvXtaeYMkWutSKQKXIuVlPa/7v1MHp+8ViBXMflmS7HquA==}
     engines: {node: '>=16'}
     cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@cloudflare/workerd-linux-arm64@1.20240403.0:
+    resolution: {integrity: sha512-9oMs43nctF2TYYJOzCtVOldokweSWaSqWnUjIOsKOFZue2fG4UMgIH9Sh1D4/KCdVankA2xqZ08XhoV42Q9+0A==}
+    engines: {node: '>=16'}
+    cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
@@ -85,6 +121,15 @@ packages:
     engines: {node: '>=16'}
     cpu: [arm64]
     os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@cloudflare/workerd-windows-64@1.20240403.0:
+    resolution: {integrity: sha512-5FGyjzDAoUaU15GhUAGXWzOOlbCLdiDHatnjl6XY0Mbiu3ik5lz592L15QkFnNVc9a3lZGGCIsfYW2sq2R01VQ==}
+    engines: {node: '>=16'}
+    cpu: [x64]
+    os: [win32]
     requiresBuild: true
     dev: true
     optional: true
@@ -1910,6 +1955,19 @@ packages:
       stackback: 0.0.2
     dev: true
 
+  /workerd@1.20240403.0:
+    resolution: {integrity: sha512-OcUPNNIUn4dC3dyRc/W6sTPjgFjJQVpbqpMCx7RmAzVrEzB+nJlz25FZr5alxIG5769UmzvMB1wlK/hMddHk0w==}
+    engines: {node: '>=16'}
+    hasBin: true
+    requiresBuild: true
+    optionalDependencies:
+      '@cloudflare/workerd-darwin-64': 1.20240403.0
+      '@cloudflare/workerd-darwin-arm64': 1.20240403.0
+      '@cloudflare/workerd-linux-64': 1.20240403.0
+      '@cloudflare/workerd-linux-arm64': 1.20240403.0
+      '@cloudflare/workerd-windows-64': 1.20240403.0
+    dev: true
+
   /workerd@1.20240405.0:
     resolution: {integrity: sha512-AWrOSBh4Ll7sBWHuh0aywm8hDkKqsZmcwnDB0PVGszWZM5mndNBI5iJ/8haXVpdoyqkJQEVdhET9JDi4yU8tRg==}
     engines: {node: '>=16'}
@@ -2011,4 +2069,74 @@ packages:
 
   /zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+    dev: true
+
+  '@prerelease-registry.devprod.cloudflare.dev/workers-sdk/runs/8555574864/npm-package-cloudflare-kv-asset-handler-5508':
+    resolution: {tarball: https://prerelease-registry.devprod.cloudflare.dev/workers-sdk/runs/8555574864/npm-package-cloudflare-kv-asset-handler-5508}
+    name: '@cloudflare/kv-asset-handler'
+    version: 0.0.0-76d05ea0
+    engines: {node: '>=16.13'}
+    dependencies:
+      mime: 3.0.0
+    dev: true
+
+  '@prerelease-registry.devprod.cloudflare.dev/workers-sdk/runs/8555574864/npm-package-miniflare-5508':
+    resolution: {tarball: https://prerelease-registry.devprod.cloudflare.dev/workers-sdk/runs/8555574864/npm-package-miniflare-5508}
+    name: miniflare
+    version: 0.0.0-76d05ea0
+    engines: {node: '>=16.13'}
+    hasBin: true
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      acorn: 8.11.3
+      acorn-walk: 8.3.2
+      capnp-ts: 0.7.0
+      exit-hook: 2.2.1
+      glob-to-regexp: 0.4.1
+      stoppable: 1.1.0
+      undici: 5.28.4
+      workerd: 1.20240403.0
+      ws: 8.16.0
+      youch: 3.3.3
+      zod: 3.22.4
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+    dev: true
+
+  '@prerelease-registry.devprod.cloudflare.dev/workers-sdk/runs/8555574864/npm-package-wrangler-5508(@cloudflare/workers-types@4.20240405.0)':
+    resolution: {tarball: https://prerelease-registry.devprod.cloudflare.dev/workers-sdk/runs/8555574864/npm-package-wrangler-5508}
+    id: '@prerelease-registry.devprod.cloudflare.dev/workers-sdk/runs/8555574864/npm-package-wrangler-5508'
+    name: wrangler
+    version: 0.0.0-76d05ea0
+    engines: {node: '>=16.17.0'}
+    hasBin: true
+    peerDependencies:
+      '@cloudflare/workers-types': ^4.20240402.0
+    peerDependenciesMeta:
+      '@cloudflare/workers-types':
+        optional: true
+    dependencies:
+      '@cloudflare/kv-asset-handler': '@prerelease-registry.devprod.cloudflare.dev/workers-sdk/runs/8555574864/npm-package-cloudflare-kv-asset-handler-5508'
+      '@cloudflare/workers-types': 4.20240405.0
+      '@esbuild-plugins/node-globals-polyfill': 0.2.3(esbuild@0.17.19)
+      '@esbuild-plugins/node-modules-polyfill': 0.2.2(esbuild@0.17.19)
+      blake3-wasm: 2.1.5
+      chokidar: 3.6.0
+      esbuild: 0.17.19
+      miniflare: '@prerelease-registry.devprod.cloudflare.dev/workers-sdk/runs/8555574864/npm-package-miniflare-5508'
+      nanoid: 3.3.7
+      path-to-regexp: 6.2.2
+      resolve: 1.22.8
+      resolve.exports: 2.0.2
+      selfsigned: 2.4.1
+      source-map: 0.6.1
+      xxhash-wasm: 1.0.2
+    optionalDependencies:
+      fsevents: 2.3.3
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: true
