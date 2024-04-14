@@ -2,7 +2,7 @@ import {DurableObject, WorkerEntrypoint} from 'cloudflare:workers'
 
 export interface Env {
 	MANAGER: DurableObjectNamespace<Manager>
-	MANAGER_SERVICE: WorkerEntrypoint<ManagerService>
+	MANAGER_SERVICE: Service<ManagerService>
 }
 
 export class Manager extends DurableObject<Env> {
