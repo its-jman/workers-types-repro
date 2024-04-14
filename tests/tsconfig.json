@@ -1,8 +1,6 @@
 {
 	"extends": "../tsconfig.json",
 	"compilerOptions": {
-		"module": "esnext",
-		"moduleResolution": "bundler",
 		"types": ["@cloudflare/workers-types/experimental", "@cloudflare/vitest-pool-workers"]
 	},
 	"include": [".", "env.ts"]
