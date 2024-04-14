@@ -1,7 +1,0 @@
-{
-  "name": "example",
-  "dependencies": {
-    "@cloudflare/workers-types": "^4.20240405.0",
-    "workers-types-repro": "workspace:^"
-  }
-}
