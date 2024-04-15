@@ -13,4 +13,4 @@ Goal is to build a library around workers / durable objects. I don't have any co
    - This gets resolved in non-RPC by ensuring you consume the requests body (per this thread https://discord.com/channels/595317990191398933/1218150105777963101/1227337525484326933), but no luck resolving with RPC communication.
    - This gets resolved in RPC by stuffing your call inside `runInDurableObject`. `runInDurableObject` doesn't correctly infer the type of your RPC. You have to manually type.
 6. `'(inst: Manager)' is not assignable to '(instance: DurableObject)' Type 'DurableObject' is missing types from 'Manager': [Rpc.__DURABLE_OBJECT_BRAND]` when passing to runInDurableObject
-   - Resolved by
+   - Resolved by adding a blank `fetch` handler to the durable object.

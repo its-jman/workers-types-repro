@@ -16,7 +16,5 @@ export class Manager extends DurableObject<Env> {
 }
 
 export default {
-	fetch() {
-		return new Response('N/A')
-	},
+	fetch: () => new Response('N/A'),
 } satisfies ExportedHandler<Env>
