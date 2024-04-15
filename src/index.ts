@@ -6,9 +6,10 @@ export interface Env {
 
 export class Manager extends DurableObject<Env> {
 	async test(at: number, val: string) {
-		await this.ctx.storage.put("test", val)
+		await this.ctx.storage.put('test', val)
 		await this.ctx.storage.setAlarm(at)
-  }
+		return val
+	}
 }
 
 export default {
