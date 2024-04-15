@@ -4,6 +4,7 @@
   "scripts": {
     "test": "vitest run"
   },
+  "prettier": "@jman.dev/prettier-config",
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "https://prerelease-registry.devprod.cloudflare.dev/workers-sdk/runs/8555574864/npm-package-cloudflare-vitest-pool-workers-5508",
     "@cloudflare/workers-types": "^4.20240405.0",
@@ -34,5 +35,10 @@
   },
   "main": "./dist/commonjs/index.js",
   "types": "./dist/commonjs/index.d.ts",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@jman.dev/prettier-config": "^0.1.8",
+    "prettier": "^3.2.5",
+    "zod": "^3.22.4"
+  }
 }
