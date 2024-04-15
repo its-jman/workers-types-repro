@@ -6,3 +6,4 @@ Goal is to build a library around workers / durable objects. I don't have any co
 2. Removing the `experimental` from the test code works, and gives the correct types, but at runtime throws `The receiving Durable Object does not support RPC, because its class was not declared with "extends DurableObject".`
 3. Adding `rpc` compat flag says "The compatibility flag rpc became the default", but it does change the error. Now just getting "Vitest caught 1 unhandled error during the test run." -- "The Workers runtime failed to start. There is likely additional logging output above." -- "Serialized Error: { code: 'ERR_RUNTIME_FAILURE' }"
 4. Worker "core:user:vitest-pool-workers-runner-"'s binding "MANAGER_SERVICE" refers to a service "core:user:manager", but no such service is defined.
+5. Failed to pop isolated storage stack frame in tests/main.test.ts's test...

@@ -2,20 +2,13 @@ import {DurableObject, WorkerEntrypoint} from 'cloudflare:workers'
 
 export interface Env {
 	MANAGER: DurableObjectNamespace<Manager>
-	MANAGER_SERVICE: Service<ManagerService>
 }
 
 export class Manager extends DurableObject<Env> {
-	async test(ctx: string) {
-    return "5"
+	async test(at: number, val: string) {
+		await this.ctx.storage.put("test", val)
+		await this.ctx.storage.setAlarm(at)
   }
-}
-
-export class ManagerService extends WorkerEntrypoint<Env> {
-	async testService() {
-		const stub = this.env.MANAGER.get(this.env.MANAGER.idFromName('main'))
-		return await stub.test("abc")
-	}
 }
 
 export default {

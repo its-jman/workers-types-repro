@@ -1,17 +1,10 @@
 {
   "name": "rpc",
-	"compatibility_date": "2024-04-05",
+	"compatibility_date": "2024-04-03",
 	"main": "src/index.ts",
 	"compatibility_flags": ["nodejs_compat"],
 	"durable_objects": {
 		"bindings": [{"class_name": "Manager", "name": "MANAGER"}]
 	},
-  "services": [
-    {
-      "binding": "MANAGER_SERVICE",
-      "service": "rpc",
-      "entrypoint": "ManagerService"
-    }
-  ],
 	"migrations": [{"tag": "v1", "new_classes": ["Manager"]}]
 }
