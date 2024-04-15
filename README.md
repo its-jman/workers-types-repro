@@ -7,3 +7,4 @@ Goal is to build a library around workers / durable objects. I don't have any co
 3. Adding `rpc` compat flag says "The compatibility flag rpc became the default", but it does change the error. Now just getting "Vitest caught 1 unhandled error during the test run." -- "The Workers runtime failed to start. There is likely additional logging output above." -- "Serialized Error: { code: 'ERR_RUNTIME_FAILURE' }"
 4. Worker "core:user:vitest-pool-workers-runner-"'s binding "MANAGER_SERVICE" refers to a service "core:user:manager", but no such service is defined.
 5. Failed to pop isolated storage stack frame in tests/main.test.ts's test...
+5a. This gets resolved in non-RPC by ensuring you consume the requests body (per this thread https://discord.com/channels/595317990191398933/1218150105777963101/1227337525484326933), but no luck resolving with RPC communication.
