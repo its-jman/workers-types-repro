@@ -4,9 +4,6 @@ import {describe, it, expect} from 'vitest'
 import {Manager} from '../src'
 
 it('should be ok', async () => {
-	const stub = env.MANAGER.get(env.MANAGER.idFromName('main'))
-	await stub.fetch('https://_', {
-		method: 'POST',
-		body: JSON.stringify({at: Date.now() + 60 * 1000, val: '1234'}),
-	})
+	const stub = env.MANAGER.get(env.MANAGER.idFromName("main"))
+	await stub.test(Date.now() + 60 * 1000, "1234")
 })

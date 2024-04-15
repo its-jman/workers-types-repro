@@ -1,21 +1,13 @@
 import {DurableObject, WorkerEntrypoint} from 'cloudflare:workers'
-import {z} from "zod"
 
 export interface Env {
-	MANAGER: DurableObjectNamespace
+	MANAGER: DurableObjectNamespace<Manager>
 }
 
-export class Manager  {
-	constructor(private ctx: DurableObjectState, private env: Env) {}
-	async fetch(req: Request) {
-		const data = z.object({at: z.number(), val: z.string()}).parse(await req.json())
-		const resp = await this.test(data.at, data.val)
-		return new Response(resp)
-	}
+export class Manager extends DurableObject<Env> {
 	async test(at: number, val: string) {
 		await this.ctx.storage.put("test", val)
 		await this.ctx.storage.setAlarm(at)
-		return "ok"
   }
 }
 
